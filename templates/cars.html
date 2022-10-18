@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+ 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   		<title>Главная</title>
+	</head>
+<body>
+	<nav>
+		<a href="/">Главная</a>
+   	 	<a href="/cars">Наши автомобили</a>
+   	 	<a href="/contacts">Контакты</a>
+	</nav>
+	<h1>Парк автомобилей</h1>
+	<img src="{{ url_for('static', filename='toyota-camry-2016-png-2.png') }}" alt="html" width="200" height="150">
+	<h3>Toyota Camry Седан</h3>
+	<p>Коробка: Механика</p>
+	<p>Объем: 2л</p>
+	<p>Мощность: 150 л.с.</p>
+	{% if auth_status_for_page %}
+	<button type="button" onclick="alert('Отличная работа!')">Забронировать</button>
+	{% endif %}
+</body>
+</html>
